@@ -133,6 +133,9 @@
 @utility shadow-brand-color{
   box-shadow: 0 4px 8px 0 #55128A;
 }
+@utility shadow-pink-color{
+  box-shadow: 0 4px 8px 0 #E6B0C8;
+}
 
 @layer utilities {
   .form-header{

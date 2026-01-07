@@ -7,11 +7,16 @@ import congoText from "@/public/images/congratsText.png";
 import Image from "next/image";
 import { useSignupStore } from "@/store/useSignupStore";
 import ProceedBtn from "@/components/shared/ProceedBtn";
+import { useRouter } from "next/navigation";
 
 const CongratsPage = () => {
   const { gender } = useSignupStore();
-
+  const router = useRouter();
   const congratsImage = gender === "Man" ? congratsM : congratsW;
+
+  const handleProceed = () => {
+    router.push("/preferences/photos");
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-app-gradient px-5 overflow-hidden">
@@ -70,7 +75,7 @@ const CongratsPage = () => {
           transition={{ delay: 0.7, duration: 0.3 }}
           className="w-full flex-center"
         >
-          <ProceedBtn handleProceed={() => {}} />
+          <ProceedBtn handleProceed={handleProceed} />
         </motion.div>
       </div>
     </div>

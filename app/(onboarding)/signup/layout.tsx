@@ -25,11 +25,11 @@ const SignupFlowLayout = ({ children }: { children: React.ReactNode }) => {
 
   const handlePrev = () => {
     const currentIndex = FLOW_STEPS.findIndex((step) => step.path === pathname);
-    console.log(currentIndex);
+
     const safeIndex = currentIndex === -1 ? 0 : currentIndex;
 
-    if (currentIndex === 0) return;
-    else router.push(FLOW_STEPS[currentIndex - 1].path);
+    if (safeIndex === 0) return;
+    else router.push(FLOW_STEPS[safeIndex - 1].path);
   };
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-app-gradient px-5 overflow-hidden">
