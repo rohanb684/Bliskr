@@ -12,14 +12,12 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
-// 1. Define the types (What data can this component accept?)
 interface InputComponentProps {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string; // Good practice to make this dynamic too
+  placeholder?: string;
 }
 
-// 2. Destructure the props in the function arguments
 const InputComponent = ({
   value,
   onChange,
@@ -28,48 +26,46 @@ const InputComponent = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div>
-      <InputGroup
-        className="w-full bg-[rgba(255,255,255,0.40)] has-[[data-slot=input-group-control]:focus-visible]:ring-0
+    <InputGroup
+      className="w-full sm:h-10 bg-[rgba(255,255,255,0.40)] has-[[data-slot=input-group-control]:focus-visible]:ring-0
        has-[[data-slot=input-group-control]:focus-visible]:border-brand-color
         shadow-[inset_0_0_3px_0_#55128A] border border-transparent placeholder:text-muted-foreground
          focus-within:border-brand-color focus-within:ring-0 focus-within:ring-offset-0 
          focus-within:outline-none transition-colors duration-200 focus-visible:ring-0"
-      >
-        <InputGroupInput
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          autoFocus
-          type={showPassword ? "text" : "password"}
-          className="bg-transparent border-0 shadow-none focus:shadow-none focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:shadow-none"
+    >
+      <InputGroupInput
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        autoFocus
+        type={showPassword ? "text" : "password"}
+        className="w-full bg-transparent border-0 shadow-none focus:shadow-none focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:shadow-none"
+      />
+
+      <InputGroupAddon>
+        <Image
+          src={lockIcon}
+          width={12}
+          height={12}
+          alt="Lock Icon"
+          className="w-5"
         />
+      </InputGroupAddon>
 
-        <InputGroupAddon>
-          <Image
-            src={lockIcon}
-            width={12}
-            height={12}
-            alt="Lock Icon"
-            className="w-5"
-          />
-        </InputGroupAddon>
-
-        <InputGroupAddon align="inline-end">
-          <button
-            type="button"
-            className="w-5 h-5 text-brand-color focus:outline-none focus-visible:outline-none"
-            onClick={() => setShowPassword((prev) => !prev)}
-          >
-            {showPassword ? (
-              <EyeOff className="w-full h-full " />
-            ) : (
-              <Eye className="w-full h-full" />
-            )}
-          </button>
-        </InputGroupAddon>
-      </InputGroup>
-    </div>
+      <InputGroupAddon align="inline-end">
+        <button
+          type="button"
+          className="w-5 h-5 text-brand-color focus:outline-none focus-visible:outline-none"
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {showPassword ? (
+            <EyeOff className="w-full h-full " />
+          ) : (
+            <Eye className="w-full h-full" />
+          )}
+        </button>
+      </InputGroupAddon>
+    </InputGroup>
   );
 };
 const REQUIREMENTS = [
@@ -88,29 +84,25 @@ const REQUIREMENTS = [
 ] as const;
 
 const PasswordPage = () => {
-  // Store the actual password string to validate it
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  // Track validation states
   const [validations, setValidations] = useState({
     eightChar: false,
     upperLower: false,
     numberChar: false,
   });
 
-  // 2. Real-time Validation Function
   useEffect(() => {
     setValidations({
       eightChar: password.length >= 8,
       upperLower: /[a-z]/.test(password) && /[A-Z]/.test(password),
-      // Regex checks for at least one digit AND one special char
+
       numberChar:
         /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password),
     });
   }, [password]);
 
-  // Derived state: Are all conditions met?
   const isFormValid = Object.values(validations).every(Boolean);
 
   const handleNext = () => {

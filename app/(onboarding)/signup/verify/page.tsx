@@ -76,7 +76,7 @@ const VerifyPage = () => {
         <InputOTP
           maxLength={6}
           pattern={REGEXP_ONLY_DIGITS}
-          className="w-full"
+          containerClassName="w-full"
           value={otp}
           onChange={(value) => setOtp(value)}
         >

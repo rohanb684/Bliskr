@@ -43,7 +43,7 @@ const SignupFlowLayout = ({ children }: { children: React.ReactNode }) => {
         <StepIndicator steps={FLOW_STEPS} currentStepIndex={safeIndex} />
       </div>
 
-      <div className="w-full max-w-md">{children}</div>
+      <div className="w-full max-w-md ">{children}</div>
     </div>
   );
 };

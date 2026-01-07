@@ -32,7 +32,7 @@ const page = () => {
           type="email"
           value={email}
           placeholder="email@example.com"
-          className="form-input"
+          className="form-input sm:h-10"
           autoFocus
           onChange={(e) => {
             setEmail(e.target.value);

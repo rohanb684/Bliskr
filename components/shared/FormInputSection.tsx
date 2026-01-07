@@ -19,8 +19,7 @@ const FormInputSection = ({
       <h3 className="text-[#333] font-normal text-[12px] sm:text-sm mb-5">
         {subheading} <span className="font-semibold">{optionalsubHeading}</span>
       </h3>
-
-      {children}
+      <div className="w-full flex-center">{children}</div>
     </main>
   );
 };

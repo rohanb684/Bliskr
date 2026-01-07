@@ -124,6 +124,10 @@
   background:linear-gradient(90deg, #D5E5FE 0%, #FEEFEB 100%);
 }
 
+@utility bg-proceed-btn{
+  background:linear-gradient(135deg, #FF7415 0%, #55128A 100%)
+}
+
 @layer utilities {
   .form-header{
     @apply text-2xl font-black 
