@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="">HomePage</div>;
+  return <div className="bg-app-gradient h-screen w-full">HomePage</div>;
 }
