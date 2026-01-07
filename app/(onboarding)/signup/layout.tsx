@@ -10,7 +10,7 @@ import StepIndicator from "@/components/shared/StepIndicator";
 import { usePathname, useRouter } from "next/navigation";
 
 const FLOW_STEPS = [
-  { id: "email", path: "/signup/email", icon: emailIcon }, // 👈 Passing the image object
+  { id: "email", path: "/signup/email", icon: emailIcon },
   { id: "password", path: "/signup/password", icon: passwordIcon },
   { id: "verify", path: "/signup/verify", icon: otpIcon },
   { id: "gender", path: "/signup/gender", icon: genderIcon },

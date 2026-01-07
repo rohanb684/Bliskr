@@ -30,7 +30,7 @@ const VerifyPage = () => {
 
   const [otp, setOtp] = useState("");
 
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [canResend, setCanResend] = useState(false);
 
   const isOtpValid = otp.length === 6 && /^\d{6}$/.test(otp);
@@ -56,15 +56,11 @@ const VerifyPage = () => {
       .padStart(2, "0")}`;
   };
 
-  // Handle resend code
   const handleResendCode = () => {
-    // Reset timer
     setTimeLeft(60);
     setCanResend(false);
-    // TODO: Add your resend OTP API call here
   };
 
-  // Handle next button click
   const handleNext = () => {
     if (!isOtpValid) return;
     router.push("/signup/gender");
@@ -96,31 +92,38 @@ const VerifyPage = () => {
       </FormInputSection>
 
       {/* Resend Code / Timer Section */}
-      <div className="flex items-center justify-between mt-6">
-        <div className="text-sm">
-          {canResend ? (
-            <button
-              onClick={handleResendCode}
-              className="text-brand-color font-semibold cursor-pointer hover:underline"
+      <div className="flex items-center justify-end relative mt-6 pb-15 w-full">
+        <div className="flex flex-col gap-4 absolute left-0 top-0 w-full items-center justify-center">
+          <p className="text-gray-600 text-sm">
+            Resend code in{" "}
+            <span
+              className={cn(
+                "font-semibold ",
+                canResend ? "text-gray-400" : "text-brand-color"
+              )}
             >
-              Resend Code
-            </button>
-          ) : (
-            <p className="text-gray-600">
-              Resend code in{" "}
-              <span className="font-semibold text-brand-color">
-                {formatTime(timeLeft)}
-              </span>
-            </p>
-          )}
+              {formatTime(timeLeft)}
+            </span>
+          </p>
+
+          <button
+            onClick={handleResendCode}
+            disabled={!canResend}
+            className={cn(
+              "text-white font-bold bg-gray-300 p-3 rounded-lg cursor-not-allowed",
+              canResend &&
+                "bg-black shadow-[0_4px_8px_0_#E6B0C8] cursor-pointer"
+            )}
+          >
+            Resend Code
+          </button>
         </div>
 
-        {/* Next Button */}
         <button
           disabled={!isOtpValid}
           onClick={handleNext}
           className={cn(
-            "flex-center w-7 h-7 sm:h-8 sm:w-8 shrink-0 rounded-full transition-all duration-300",
+            "flex-center w-7 h-7 relative sm:h-8 sm:w-8 shrink-0 rounded-full transition-all duration-300",
             isOtpValid
               ? "bg-brand-color shadow-lg hover:scale-105 cursor-pointer"
               : "bg-gray-300 cursor-not-allowed"
