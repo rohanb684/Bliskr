@@ -9,18 +9,23 @@ import { useState } from "react";
 import bulb from "@/public/images/bulbIcon.svg";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { useSignupStore } from "@/store/useSignupStore";
+
 const genderData = [
   { label: "Man", image: manImage },
   { label: "Woman", image: womanImage },
   { label: "Others", image: othersImage },
   { label: "Prefer not to say", image: ntsImage },
 ];
+
 const GenderPage = () => {
   const [selectedGender, setSelectedGender] = useState("");
   const router = useRouter();
+  const { setGender } = useSignupStore();
 
   const handleNext = () => {
     if (!selectedGender) return;
+    setGender(selectedGender);
     router.push("/signup/details");
   };
   return (

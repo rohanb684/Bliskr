@@ -127,6 +127,12 @@
 @utility bg-proceed-btn{
   background:linear-gradient(135deg, #FF7415 0%, #55128A 100%)
 }
+@utility bg-pink-gradient{
+  background:linear-gradient(92deg, #FFF 0%, #FFCEE4 98.27%)
+}
+@utility shadow-brand-color{
+  box-shadow: 0 4px 8px 0 #55128A;
+}
 
 @layer utilities {
   .form-header{

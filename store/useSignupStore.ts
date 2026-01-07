@@ -1,30 +1,29 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
-// 1. Define the "Shape" of your data
 type SignupState = {
   email: string
   password: string
-  // Actions (Functions to update the state)
+  gender: string
   setEmail: (email: string) => void
   setPassword: (password: string) => void
+  setGender: (gender: string) => void
 }
 
-// 2. Create the store
 export const useSignupStore = create<SignupState>()(
   persist(
     (set) => ({
-      // Initial Data
       email: '',
       password: '',
+      gender: '',
 
-      // Functions to update data
-      setEmail: (email) => set({ email }), // Update email only
-      setPassword: (password) => set({ password }), // Update password only
+      setEmail: (email) => set({ email }),
+      setPassword: (password) => set({ password }),
+      setGender: (gender) => set({ gender }),
     }),
     {
-      name: 'signup-storage', // The key name in localStorage
-      storage: createJSONStorage(() => localStorage), // Save to browser storage
+      name: 'signup-storage',
+      storage: createJSONStorage(() => localStorage),
     }
   )
 )
