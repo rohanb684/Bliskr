@@ -8,6 +8,7 @@ import ntsImage from "@/public/images/gender/nts.png";
 import { useState } from "react";
 import bulb from "@/public/images/bulbIcon.svg";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 const genderData = [
   { label: "Man", image: manImage },
   { label: "Woman", image: womanImage },
@@ -16,6 +17,12 @@ const genderData = [
 ];
 const GenderPage = () => {
   const [selectedGender, setSelectedGender] = useState("");
+  const router = useRouter();
+
+  const handleNext = () => {
+    if (!selectedGender) return;
+    router.push("/signup/details");
+  };
   return (
     <div className="w-full px-1 pb-5">
       <FormInputSection
@@ -66,6 +73,7 @@ const GenderPage = () => {
         </p>
         <button
           type="button"
+          onClick={handleNext}
           className="text-center text-sm sm:text-lg font-semibold bg-proceed-btn text-white px-4 py-2 rounded-md hover:opacity-90 cursor-pointer"
           disabled={!selectedGender}
         >
