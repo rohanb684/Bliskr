@@ -2,14 +2,14 @@ interface FormInputSectionProps {
   heading: string;
   subheading: string;
   optionalsubHeading?: string;
-  InputComponent: React.ComponentType;
+  children: React.ReactNode;
 }
 
 const FormInputSection = ({
   heading,
   subheading,
   optionalsubHeading = "",
-  InputComponent,
+  children,
 }: FormInputSectionProps) => {
   return (
     <main className="w-full">
@@ -20,7 +20,7 @@ const FormInputSection = ({
         {subheading} <span className="font-semibold">{optionalsubHeading}</span>
       </h3>
 
-      <InputComponent />
+      {children}
     </main>
   );
 };

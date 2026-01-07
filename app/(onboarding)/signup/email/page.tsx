@@ -11,7 +11,7 @@ import { useState } from "react";
 const page = () => {
   const router = useRouter();
   const { email, setEmail } = useSignupStore();
-  const [error, setError] = useState("Something went wrong");
+  const [error, setError] = useState("");
 
   const handleNext = () => {
     if (!email || !email.includes("@")) {
@@ -22,9 +22,12 @@ const page = () => {
     router.push("/signup/password");
   };
 
-  const InputComponent = () => {
-    return (
-      <>
+  return (
+    <div className="w-full px-1">
+      <FormInputSection
+        heading="What's your email?"
+        subheading="This will be your username. We'll never share it."
+      >
         <Input
           type="email"
           value={email}
@@ -37,16 +40,7 @@ const page = () => {
           }}
         />
         <p className="text-[11px] text-red-600 font-semibold mt-1">{error}</p>
-      </>
-    );
-  };
-  return (
-    <div className="w-full px-1">
-      <FormInputSection
-        heading="What's your email?"
-        subheading="This will be your username. We'll never share it."
-        InputComponent={InputComponent}
-      />
+      </FormInputSection>
       <div className="flex items-center justify-between mt-4">
         <div className="flex items-center gap-1">
           <Image
