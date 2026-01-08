@@ -123,15 +123,20 @@
 @utility bg-app-gradient {
   background:linear-gradient(90deg, #D5E5FE 0%, #FEEFEB 100%);
 }
-
+@utility bg-white-card {
+  background:rgba(255, 255, 255, 0.40);
+}
 @utility bg-proceed-btn{
   background:linear-gradient(135deg, #FF7415 0%, #55128A 100%)
 }
 @utility bg-pink-gradient{
   background:linear-gradient(92deg, #FFF 0%, #FFCEE4 98.27%)
 }
-@utility shadow-brand-color{
-  box-shadow: 0 4px 8px 0 #55128A;
+@utility shadow-light-brand-color {
+  box-shadow: 0 4px 8px 0 transparent, 0 0 3px 0 #55128A inset;
+}
+@utility shadow-brand-color {
+  box-shadow: 0 4px 8px 0 #55128A, 0 0 3px 0 #55128A inset;
 }
 @utility shadow-pink-color{
   box-shadow: 0 4px 8px 0 #E6B0C8;

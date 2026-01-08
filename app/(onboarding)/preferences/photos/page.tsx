@@ -35,8 +35,9 @@ const PhotosPage = () => {
           </p>
         </div>
       </div>
-      <PhotosProceed />
-      <div className="w-full flex-center">
+
+      <div className="w-full flex-center flex-col gap-1 mt-7">
+        <PhotosProceed />
         <button
           className="shadow-pink-color text-center mt-4 text-[16px]
         sm:text-lg font-semibold bg-black text-white

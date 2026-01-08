@@ -12,7 +12,7 @@ const DatePage = () => {
       >
         <DatingInput />
       </FormInputSection>
-      <div className="w-full flex-center flex-col mt-6">
+      <div className="w-full flex-center flex-col mt-6 gap-5">
         <FormHelperText
           text="You will see profiles based on this"
           image={Bulb}

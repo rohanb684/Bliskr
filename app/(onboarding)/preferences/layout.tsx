@@ -22,7 +22,7 @@ const FLOW_STEPS = [
   { id: "photos", path: "/preferences/photos", icon: camera },
   { id: "date", path: "/preferences/dating-preference", icon: heart },
   { id: "relationship", path: "/preferences/relationship-status", icon: ring },
-  { id: "about", path: "/preferences/about", icon: message },
+  { id: "about", path: "/preferences/tell-us-about-yourself", icon: message },
   { id: "interests", path: "/preferences/interests", icon: guitar },
   { id: "fewmore", path: "/preferences/few-more-details", icon: eyeImage },
   { id: "children", path: "/preferences/children", icon: childrenIm },
