@@ -2,6 +2,7 @@ import PhotosInput from "@/components/features/photos/PhotosInput";
 import PhotosProceed from "@/components/features/photos/PhotosProceed";
 import FormInputSection from "@/components/shared/FormInputSection";
 import { Check, X } from "lucide-react";
+
 const PhotosPage = () => {
   return (
     <div className="pb-4">

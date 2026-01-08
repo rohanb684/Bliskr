@@ -12,7 +12,7 @@ const PhotosProceed = () => {
 
   const handleProceed = () => {
     if (!canProceed) return;
-    router.push("/preferences/date");
+    router.push("/preferences/dating-preference");
   };
 
   return (

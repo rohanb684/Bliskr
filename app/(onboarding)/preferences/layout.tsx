@@ -20,7 +20,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 const FLOW_STEPS = [
   { id: "photos", path: "/preferences/photos", icon: camera },
-  { id: "date", path: "/preferences/date", icon: heart },
+  { id: "date", path: "/preferences/dating-preference", icon: heart },
   { id: "relationship", path: "/preferences/relationship-status", icon: ring },
   { id: "about", path: "/preferences/about", icon: message },
   { id: "interests", path: "/preferences/interests", icon: guitar },
