@@ -1,18 +1,21 @@
-import AboutInput from "@/components/features/about/AboutInput";
+import DrugsInput from "@/components/features/drugs/DrugsInput";
 import AboutProceed from "@/components/features/about/AboutProceed";
 import FormHelperText from "@/components/shared/FormHelperText";
 import FormInputSection from "@/components/shared/FormInputSection";
 import SkipBtn from "@/components/shared/SkipBtn";
+import VisibilityToggle from "@/components/shared/VisibilityToggle";
 import bulb from "@/public/images/bulbIcon.svg";
-const AboutPage = () => {
+
+const DrugsPage = () => {
   return (
     <div className="w-full pb-4">
-      <FormInputSection
-        heading="Tell us about yourself"
-        subheading="What makes you interesting?"
-      >
-        <AboutInput />
+      <FormInputSection heading="Are you into Drugs?" subheading="">
+        <DrugsInput />
       </FormInputSection>
+
+      <div className="w-full flex-center mt-4">
+        <VisibilityToggle />
+      </div>
 
       <div className="w-full flex justify-between items-center mt-3">
         <FormHelperText
@@ -20,15 +23,14 @@ const AboutPage = () => {
           image={bulb}
           alt="Bulb Image"
         />
-
         <AboutProceed />
       </div>
 
       <div className="w-full flex-center mt-8 sm:mt-18">
-        <SkipBtn href="/preferences/interests" />
+        <SkipBtn href="/preferences/type-of-relationship" />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default DrugsPage;

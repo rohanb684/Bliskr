@@ -45,6 +45,7 @@ const FLOW_STEPS = [
 
 const PreferencesFlowLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
+  console.log(pathname);
   const router = useRouter();
   const currentIndex = FLOW_STEPS.findIndex((step) => step.path === pathname);
   const safeIndex = currentIndex === -1 ? 0 : currentIndex;
@@ -59,22 +60,27 @@ const PreferencesFlowLayout = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-app-gradient px-5 overflow-hidden">
-      <div className="max-w-md w-full flex mb-7 pt-3">
-        {FLOW_STEPS[0].path !== pathname ? (
-          <button onClick={handlePrev} className="cursor-pointer w-fit">
-            <ChevronLeft color="#55128A" className="w-5 h-5 " />
-          </button>
-        ) : (
-          <button
-            onClick={handlePrev}
-            className="cursor-pointer w-5 h-5"
-          ></button>
-        )}
-      </div>
+      {pathname !== "/preferences/congratulations" && (
+        <div className="max-w-md w-full flex mb-7 pt-3">
+          {FLOW_STEPS[0].path !== pathname &&
+          pathname !== "/preferences/congratulations" ? (
+            <button onClick={handlePrev} className="cursor-pointer w-fit">
+              <ChevronLeft color="#55128A" className="w-5 h-5 " />
+            </button>
+          ) : (
+            <button
+              onClick={handlePrev}
+              className="cursor-pointer w-5 h-5"
+            ></button>
+          )}
+        </div>
+      )}
 
-      <div className="w-full mb-4 max-w-md">
-        <StepIndicator steps={FLOW_STEPS} currentStepIndex={safeIndex} />
-      </div>
+      {pathname !== "/preferences/congratulations" && (
+        <div className="w-full mb-4 max-w-md">
+          <StepIndicator steps={FLOW_STEPS} currentStepIndex={safeIndex} />
+        </div>
+      )}
       <div className="w-full px-1 max-w-md">{children}</div>
     </div>
   );

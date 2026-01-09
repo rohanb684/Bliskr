@@ -1,17 +1,19 @@
-import AboutInput from "@/components/features/about/AboutInput";
 import AboutProceed from "@/components/features/about/AboutProceed";
+import InterestInput from "@/components/features/interests/InterestInput";
+// import InterestProceed from "@/components/features/interests/InterestProceed";
 import FormHelperText from "@/components/shared/FormHelperText";
 import FormInputSection from "@/components/shared/FormInputSection";
 import SkipBtn from "@/components/shared/SkipBtn";
 import bulb from "@/public/images/bulbIcon.svg";
-const AboutPage = () => {
+
+const InterestsPage = () => {
   return (
     <div className="w-full pb-4">
       <FormInputSection
-        heading="Tell us about yourself"
-        subheading="What makes you interesting?"
+        heading="Tell us about your interests"
+        subheading="Add at least 5 things you enjoy"
       >
-        <AboutInput />
+        <InterestInput />
       </FormInputSection>
 
       <div className="w-full flex justify-between items-center mt-3">
@@ -25,10 +27,10 @@ const AboutPage = () => {
       </div>
 
       <div className="w-full flex-center mt-8 sm:mt-18">
-        <SkipBtn href="/preferences/interests" />
+        <SkipBtn href="/preferences/few-more-details" />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default InterestsPage;
