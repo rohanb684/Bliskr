@@ -73,7 +73,7 @@ const CongratsPage = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.3 }}
-          className="w-full flex-center"
+          className="w-full flex-center mt-8"
         >
           <ProceedBtn handleProceed={handleProceed} />
         </motion.div>

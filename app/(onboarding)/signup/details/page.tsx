@@ -28,7 +28,6 @@ const inputGroupClassName = `w-full sm:h-12 bg-[rgba(255,255,255,0.40)] has-[[da
   focus-within:border-brand-color focus-within:ring-0 focus-within:ring-offset-0 
   focus-within:outline-none transition-colors duration-200 focus-visible:ring-0`;
 
-// Sample cities list
 const CITIES = [
   "Mumbai",
   "Delhi",
@@ -78,13 +77,11 @@ const DetailsPage = () => {
   return (
     <div className="w-full px-1 pb-5">
       <div className="w-full flex flex-col gap-10">
-        {/* Name Section */}
         <FormInputSection
           heading="What should people call you?"
           subheading="Enter your first name or nickname"
         >
           <div className="flex flex-col gap-4 w-full">
-            {/* First Name */}
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-semibold text-gray-700">
                 First Name <span className="text-red-500">*</span>
@@ -112,7 +109,6 @@ const DetailsPage = () => {
               </p>
             </div>
 
-            {/* Surname */}
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-semibold text-gray-700">
                 Surname
@@ -144,7 +140,6 @@ const DetailsPage = () => {
         >
           <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
             <DrawerTrigger asChild>
-              {/* <div className="w-full "> */}
               <InputGroup className={inputGroupClassName}>
                 <InputGroupInput
                   value={city}
@@ -162,7 +157,6 @@ const DetailsPage = () => {
                   />
                 </InputGroupAddon>
               </InputGroup>
-              {/* </div> */}
             </DrawerTrigger>
 
             <DrawerContent className="max-h-[70vh] inset-x-auto! left-1/2! -translate-x-1/2! max-w-md w-[calc(100%-2rem)] rounded-t-2xl">
@@ -170,7 +164,6 @@ const DetailsPage = () => {
                 <DrawerTitle>Select your city</DrawerTitle>
               </DrawerHeader>
 
-              {/* Search Input */}
               <div className="px-4 pb-3">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />

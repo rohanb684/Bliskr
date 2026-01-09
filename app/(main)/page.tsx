@@ -1,7 +1,6 @@
 import ProfileCarouselSection from "@/components/shared/ProfileCarouselSection";
 import match1 from "@/public/images/matches/match1.jpg";
 
-// Dummy data for carousel
 const RECENTLY_ONLINE = [
   { id: "1", name: "Arundhati", age: 27, location: "Kolkata", image: match1 },
   { id: "2", name: "Priya", age: 25, location: "Mumbai", image: match1 },

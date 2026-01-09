@@ -13,7 +13,6 @@ const OptionCards = ({
   selectedOption,
   onSelect,
 }: OptionCardsProps) => {
-  // Move "Prefer not to say" to the end if it exists
   const sortedOptions = [...options].sort((a, b) => {
     if (a.toLowerCase().includes("prefer not to say")) return 1;
     if (b.toLowerCase().includes("prefer not to say")) return -1;

@@ -26,7 +26,6 @@ const CompatibleInput = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
-      {/* 2 columns grid */}
       <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
         {OPTIONS.map((option) => (
           <button

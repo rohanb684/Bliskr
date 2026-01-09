@@ -17,7 +17,6 @@ const ChildrenInput = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
-      {/* Row 1: Yes and No */}
       <div className="flex gap-3">
         <button
           onClick={() => setHasChildren("Yes")}
@@ -32,7 +31,7 @@ const ChildrenInput = () => {
           No
         </button>
       </div>
-      {/* Row 2: Prefer not to say */}
+
       <button
         onClick={() => setHasChildren("Prefer not to say")}
         className={cardClass("Prefer not to say")}

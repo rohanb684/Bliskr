@@ -17,7 +17,6 @@ const DrinkInput = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
-      {/* Row 1: Yes, Sometimes, No */}
       <div className="flex gap-3">
         <button
           onClick={() => setDrinking("Yes")}
@@ -38,7 +37,7 @@ const DrinkInput = () => {
           No
         </button>
       </div>
-      {/* Row 2: Prefer not to say */}
+
       <button
         onClick={() => setDrinking("Prefer not to say")}
         className={cardClass("Prefer not to say")}

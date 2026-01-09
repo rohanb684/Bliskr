@@ -29,7 +29,6 @@ const ReligiousInput = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
-      {/* 3x3 Grid for main options */}
       <div className="grid grid-cols-3 gap-3 w-full max-w-sm">
         {OPTIONS.map((option) => (
           <button
@@ -41,7 +40,7 @@ const ReligiousInput = () => {
           </button>
         ))}
       </div>
-      {/* Prefer not to say centered */}
+
       <button
         onClick={() => setReligiousBeliefs("Prefer not to say")}
         className={cn(cardClass("Prefer not to say"), "w-auto px-6")}

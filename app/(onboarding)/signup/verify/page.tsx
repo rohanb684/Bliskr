@@ -91,7 +91,6 @@ const VerifyPage = () => {
         </InputOTP>
       </FormInputSection>
 
-      {/* Resend Code / Timer Section */}
       <div className="flex items-center justify-end relative mt-6 pb-15 w-full">
         <div className="flex flex-col gap-4 absolute left-0 top-0 w-full items-center justify-center">
           <p className="text-gray-600 text-sm">

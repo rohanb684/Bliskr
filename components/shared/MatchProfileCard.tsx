@@ -26,8 +26,8 @@ const MatchProfileCard = ({
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevents the Link from opening
-    e.stopPropagation(); // Stops the event bubbling
+    e.preventDefault();
+    e.stopPropagation();
     setIsLiked(!isLiked);
   };
 

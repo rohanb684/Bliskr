@@ -29,14 +29,12 @@ const ALL_INTERESTS = [
 const InterestInput = () => {
   const { interests, addInterest, removeInterest } = usePreferencesStore();
 
-  // Available interests = all interests minus selected ones
   const availableInterests = ALL_INTERESTS.filter(
     (interest) => !interests.includes(interest)
   );
 
   return (
     <div className="w-full flex flex-col gap-4">
-      {/* Top Box - User's Selected Interests */}
       <div className="w-full min-h-[100px] p-3 bg-white-card shadow-light-brand-color rounded-lg">
         <p className="text-xs text-gray-500 mb-2 font-medium">Your Interests</p>
         <div className="flex flex-wrap gap-2">
@@ -59,7 +57,6 @@ const InterestInput = () => {
         </div>
       </div>
 
-      {/* Bottom Box - Available Interests */}
       <div className="w-full min-h-[120px] p-3 bg-white-card shadow-light-brand-color rounded-lg">
         <p className="text-xs text-gray-500 mb-2 font-medium">
           Tap to add interests

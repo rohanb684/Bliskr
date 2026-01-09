@@ -4,9 +4,6 @@ import welcome1 from "@/public/images/welcome1.jpg";
 import logo from "@/public/images/welcomeLogo.svg";
 import gIcon from "@/public/images/gIcon.svg";
 
-// import welcome2 from "@/public/images/welcome2.jpg";
-// import welcome3 from "@/public/images/welcome3.jpg";
-// import BackgroundCarousel from "@/components/features/auth/BackgroundCarousel";
 const WelcomPage = () => {
   return (
     <div className="w-full min-h-screen  relative bg-gray-100 ">

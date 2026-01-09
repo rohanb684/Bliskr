@@ -25,7 +25,6 @@ const RelationshipTypeInput = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
-      {/* 2x2 Grid for main options */}
       <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
         {OPTIONS.slice(0, 4).map((option) => (
           <button

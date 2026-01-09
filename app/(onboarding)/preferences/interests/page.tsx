@@ -1,6 +1,6 @@
 import AboutProceed from "@/components/features/about/AboutProceed";
 import InterestInput from "@/components/features/interests/InterestInput";
-// import InterestProceed from "@/components/features/interests/InterestProceed";
+
 import FormHelperText from "@/components/shared/FormHelperText";
 import FormInputSection from "@/components/shared/FormInputSection";
 import SkipBtn from "@/components/shared/SkipBtn";

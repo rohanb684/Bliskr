@@ -28,7 +28,7 @@ export default function StepIndicator({
         return (
           <motion.div
             key={step.id}
-            layout // 👈 This enables the smooth "shrink/grow" animation
+            layout
             initial={false}
             transition={{
               type: "spring",

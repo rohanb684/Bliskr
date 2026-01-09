@@ -11,7 +11,7 @@ const CongratsPage = () => {
   const router = useRouter();
 
   const handleProceed = () => {
-    router.push("/preferences/photos");
+    router.push("/");
   };
 
   return (
@@ -90,6 +90,7 @@ const CongratsPage = () => {
             sm:text-lg font-semibold bg-proceed-btn text-white px-4 
             w-full py-2 sm:py-3 rounded-md hover:opacity-90 
             cursor-pointer mt-7 sm:w-full"
+            onClick={handleProceed}
           >
             Join BLISKR for $15{" "}
           </button>

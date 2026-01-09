@@ -13,7 +13,6 @@ const TABS = [
   { id: "likes", label: "Likes You" },
 ];
 
-// Dummy data
 const MATCHES_DATA = [
   { id: "1", name: "Arundhati", age: 27, location: "Kolkata", image: match1 },
   { id: "2", name: "Shamli", age: 25, location: "Gujrat", image: match2 },
