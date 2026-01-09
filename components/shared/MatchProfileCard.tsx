@@ -33,7 +33,7 @@ const MatchProfileCard = ({
 
   return (
     <Link
-      href={`/profile/${id}`}
+      href={`/users/${id}`}
       className="flex flex-col gap-2 w-55 shrink-0 group"
     >
       <div className="w-full overflow-hidden shadow-light-brand-color rounded-lg">

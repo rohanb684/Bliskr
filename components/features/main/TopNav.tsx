@@ -1,10 +1,8 @@
 import Image from "next/image";
-
 import logo from "@/public/images/logoBrandColour.svg";
-import coins from "@/public/images/coins.png";
 import bell from "@/public/images/bellIcon.svg";
-import { ChevronLeft } from "lucide-react";
 import TopNavBckBtn from "./TopNavBckBtn";
+
 const TopNav = () => {
   return (
     <div className="fixed top-0 left-0 w-full flex-center bg-app-gradient z-5">
