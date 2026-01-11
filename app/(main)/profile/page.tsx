@@ -16,6 +16,8 @@ import EditHeightBodyModal from "@/components/features/profile/EditHeightBodyMod
 import EditLifestyleModal from "@/components/features/profile/EditLifestyleModal";
 import EditLookingForModal from "@/components/features/profile/EditLookingForModal";
 import EditFantasiesModal from "@/components/features/profile/EditFantasiesModal";
+import EditReligionModal from "@/components/features/profile/EditReligionModal";
+import ProfileCompletionIndicator from "@/components/features/profile/ProfileCompletionIndicator";
 
 const IMAGES = [match1, match2, match3, match4, match5];
 
@@ -37,6 +39,8 @@ const ProfilePage = () => {
   const [lifestyleModalOpen, setLifestyleModalOpen] = useState(false);
   const [lookingForModalOpen, setLookingForModalOpen] = useState(false);
   const [fantasiesModalOpen, setFantasiesModalOpen] = useState(false);
+  const [religionModalOpen, setReligionModalOpen] = useState(false);
+  const [religion, setReligion] = useState(PROFILE_DATA.religion);
 
   const {
     aboutText,
@@ -110,6 +114,9 @@ const ProfilePage = () => {
       </div>
 
       <div className="bg-white rounded-t-3xl p-5 shadow-gray-600 shadow-xs sm:shadow-lg">
+        <div className="mb-5">
+          <ProfileCompletionIndicator percentage={70} />
+        </div>
         <div className="flex justify-between items-start mb-2">
           <div>
             <h1 className="text-2xl font-semibold">
@@ -118,9 +125,12 @@ const ProfilePage = () => {
             </h1>
             <p className="text-gray-600 text-sm">{PROFILE_DATA.profession}</p>
           </div>
-          <span className="px-4 py-1.5 shadow-light-brand-color rounded-lg text-black text-sm font-bold">
-            {PROFILE_DATA.religion}
-          </span>
+          <div className="flex items-center gap-1">
+            <span className="px-4 py-1.5 shadow-light-brand-color rounded-lg text-black text-sm font-bold">
+              {religion}
+            </span>
+            <EditButton onClick={() => setReligionModalOpen(true)} />
+          </div>
         </div>
 
         <div className="flex items-center justify-between mb-4">
@@ -307,6 +317,12 @@ const ProfilePage = () => {
       <EditFantasiesModal
         open={fantasiesModalOpen}
         onOpenChange={setFantasiesModalOpen}
+      />
+      <EditReligionModal
+        open={religionModalOpen}
+        onOpenChange={setReligionModalOpen}
+        currentReligion={religion}
+        onSave={setReligion}
       />
     </div>
   );
