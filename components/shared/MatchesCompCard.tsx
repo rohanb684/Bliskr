@@ -21,7 +21,7 @@ const MatchesCompCard = ({
 }: MatchesCompCardProps) => {
   return (
     <Link
-      href={`/profile/${id}`}
+      href={`/users/${id}`}
       className="flex flex-col gap-2 w-full shrink-0 group"
     >
       <div className="w-full overflow-hidden shadow-light-brand-color rounded-lg">

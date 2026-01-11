@@ -97,7 +97,7 @@ const UserProfilePage = () => {
         ))}
       </div>
 
-      <div className="bg-white rounded-t-3xl p-5 shadow-light-brand-color">
+      <div className="bg-white rounded-t-3xl p-5 shadow-gray-600 shadow-xs sm:shadow-lg">
         <div className="flex justify-between items-start mb-2">
           <div>
             <h1 className="text-2xl font-semibold">
@@ -106,7 +106,7 @@ const UserProfilePage = () => {
             </h1>
             <p className="text-gray-600 text-sm">{PROFILE_DATA.profession}</p>
           </div>
-          <span className="px-4 py-1.5 border border-brand-color rounded-full text-brand-color text-sm font-medium">
+          <span className="px-4 py-1.5 shadow-light-brand-color rounded-lg text-black text-sm font-bold">
             {PROFILE_DATA.religion}
           </span>
         </div>
@@ -114,29 +114,31 @@ const UserProfilePage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-1">
             <Image src={orangeMapPin} alt="Location" className="w-5 h-5" />
-            <span className="text-brand-color text-sm border border-brand-color rounded-full px-3 py-0.5">
-              {PROFILE_DATA.location}
+            <span className=" text-sm rounded-full p-0.5 text-brand-color bg-[linear-gradient(135deg,#FF7415,#55128A)] inline-block ">
+              <span className="block rounded-full bg-white px-3 py-0.5">
+                {PROFILE_DATA.location}
+              </span>
             </span>
           </div>
-          <div className="w-12 h-12 rounded-full border-2 border-brand-color flex-center">
+          <div className="w-12 h-12 rounded-full shadow-brand-color flex-center">
             <Image src={gift} alt="Gift" className="w-7 h-7" />
           </div>
         </div>
 
         <div className="mb-5">
-          <h2 className="text-brand-color font-semibold mb-2">About Me</h2>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <h2 className="text-black font-semibold mb-2">About Me</h2>
+          <p className="text-brand-color font-semibold text-sm leading-relaxed">
             {PROFILE_DATA.about}
           </p>
         </div>
 
         <div className="mb-5">
-          <h2 className="text-brand-color font-semibold mb-2">Interests</h2>
+          <h2 className="text-black font-semibold mb-2">Interests</h2>
           <div className="flex flex-wrap gap-2">
             {PROFILE_DATA.interests.map((interest) => (
               <span
                 key={interest}
-                className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm"
+                className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm"
               >
                 {interest}
               </span>
@@ -145,62 +147,60 @@ const UserProfilePage = () => {
         </div>
 
         <div className="mb-5">
-          <h2 className="text-brand-color font-semibold mb-2">
-            Height & Body Type
-          </h2>
+          <h2 className="text-black font-semibold mb-2">Height & Body Type</h2>
           <div className="flex gap-3">
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.height}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.bodyType}
             </span>
           </div>
         </div>
 
         <div className="mb-5">
-          <h2 className="text-brand-color font-semibold mb-2">Lifestyle</h2>
+          <h2 className="text-black font-semibold mb-2">Lifestyle</h2>
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               Children: {PROFILE_DATA.hasChildren}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               Drinks: {PROFILE_DATA.drinking}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               Smokes: {PROFILE_DATA.smoking}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               Drugs: {PROFILE_DATA.drugs}
             </span>
           </div>
         </div>
 
         <div className="mb-5">
-          <h2 className="text-brand-color font-semibold mb-2">Looking For</h2>
+          <h2 className="text-black font-semibold mb-2">Looking For</h2>
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.relationshipType}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.intoPreferences}
             </span>
           </div>
         </div>
 
         <div>
-          <h2 className="text-brand-color font-semibold mb-2">Fantasies</h2>
+          <h2 className="text-black font-semibold mb-2">Fantasies</h2>
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.fantasies.sensory}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.fantasies.power}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.fantasies.scenarios}
             </span>
-            <span className="px-3 py-1.5 border border-brand-color rounded-full text-brand-color text-sm">
+            <span className="px-3 py-1.5 shadow-light-brand-color rounded-lg text-brand-color text-sm">
               {PROFILE_DATA.fantasies.experience}
             </span>
           </div>

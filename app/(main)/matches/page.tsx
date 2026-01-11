@@ -29,6 +29,8 @@ const LIKES_DATA = [
   { id: "7", name: "Ritika", age: 26, location: "Chennai", image: match1 },
   { id: "8", name: "Meera", age: 28, location: "Kolkata", image: match2 },
   { id: "9", name: "Ananya", age: 23, location: "Pune", image: match3 },
+  { id: "10", name: "Anju", age: 23, location: "Gurugram", image: match4 },
+  { id: "11", name: "Maitya", age: 23, location: "Rithala", image: match5 },
 ];
 
 interface MatchesPageProps {
