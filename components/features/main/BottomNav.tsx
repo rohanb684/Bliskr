@@ -40,29 +40,38 @@ const menuItems = [
 const BottomNav = () => {
   const pathname = usePathname();
   return (
-    <div className="fixed left-0 bottom-0 w-full flex-center z-5">
-      <div className=" flex items-center px-6 justify-between rounded-tl-4xl rounded-tr-4xl  w-full h-18 bg-[#FAFAFA] shadow-[0_0_4px_0_#55128A]  max-w-md ">
-        {menuItems.map((m, i) => {
-          const isCurrentPath = pathname === m.path;
+    <div
+      className="fixed left-0 bottom-0 w-full flex-center z-50"
+      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+    >
+      <div className="w-full max-w-md ">
+        <div className="flex items-center px-6 justify-between rounded-tl-4xl rounded-tr-4xl w-full h-18 bg-[#FAFAFA] shadow-[0_0_4px_0_#55128A]">
+          {menuItems.map((m, i) => {
+            const isCurrentPath = pathname === m.path;
 
-          return (
-            <Link href={m.path} key={i} className="flex-center flex-col gap-1">
-              <Image
-                src={isCurrentPath ? m.activeImage : m.InactiveImage}
-                alt={`${m.name} Icon`}
-                className="w-7"
-              />
-              <h3
-                className={cn(
-                  "text-[10px] text-[#333] font-normal",
-                  isCurrentPath && "text-brand-color"
-                )}
+            return (
+              <Link
+                href={m.path}
+                key={i}
+                className="flex-center flex-col gap-1"
               >
-                {m.name}
-              </h3>
-            </Link>
-          );
-        })}
+                <Image
+                  src={isCurrentPath ? m.activeImage : m.InactiveImage}
+                  alt={`${m.name} Icon`}
+                  className="w-7"
+                />
+                <h3
+                  className={cn(
+                    "text-[10px] text-[#333] font-normal",
+                    isCurrentPath && "text-brand-color"
+                  )}
+                >
+                  {m.name}
+                </h3>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
