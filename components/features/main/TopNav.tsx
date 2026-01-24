@@ -14,9 +14,13 @@ const TopNav = () => {
         <div className="w-17 flex-center">
           <Image src={logo} alt="Bliskr logo" className="w-8 " />
         </div>
-        <div className="w-17 flex-center">
-          <Image src={bell} alt="Bliskr logo" className="w-8 cursor-pointer" />
-        </div>
+        <Link href="/notifications" className="w-17 flex-center">
+          <Image
+            src={bell}
+            alt="Notifications"
+            className="w-8 cursor-pointer"
+          />
+        </Link>
       </div>
     </div>
   );
