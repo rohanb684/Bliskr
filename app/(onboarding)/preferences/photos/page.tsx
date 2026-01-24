@@ -2,6 +2,7 @@ import PhotosInput from "@/components/features/photos/PhotosInput";
 import PhotosProceed from "@/components/features/photos/PhotosProceed";
 import FormInputSection from "@/components/shared/FormInputSection";
 import { Check, X } from "lucide-react";
+import Link from "next/link";
 
 const PhotosPage = () => {
   return (
@@ -38,14 +39,15 @@ const PhotosPage = () => {
 
       <div className="w-full flex-center flex-col gap-1 mt-7">
         <PhotosProceed />
-        <button
+        <Link
+          href={"/preferences/dating-preference"}
           className="shadow-pink-color text-center mt-4 text-[16px]
         sm:text-lg font-semibold bg-black text-white
          px-4 w-[64%] max-w-sm py-2 sm:py-3 rounded-md hover:opacity-80 
          cursor-pointer"
         >
           Add Details later
-        </button>
+        </Link>
       </div>
     </div>
   );

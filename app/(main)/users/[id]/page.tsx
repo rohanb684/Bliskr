@@ -9,6 +9,7 @@ import match2 from "@/public/images/matches/match2.jpg";
 import match3 from "@/public/images/matches/match3.jpg";
 import match4 from "@/public/images/matches/match4.jpg";
 import match5 from "@/public/images/matches/match5.jpg";
+import OutOfCoins from "@/components/OutofCoins";
 
 const IMAGES = [match1, match2, match3, match4, match5];
 
@@ -48,7 +49,7 @@ const PROFILE_DATA = {
 const UserProfilePage = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [showOutOfCoins, setShowOutOfCoins] = useState(false);
   const handleScroll = useCallback(() => {
     if (!carouselRef.current) return;
     const container = carouselRef.current;
@@ -57,6 +58,15 @@ const UserProfilePage = () => {
     const index = Math.round(scrollLeft / itemWidth);
     setCurrentIndex(index);
   }, []);
+
+  const handlePaidAction = async () => {
+    const response = "OUT_OF_COINS";
+
+    if (response === "OUT_OF_COINS") {
+      setShowOutOfCoins(true);
+      return;
+    }
+  };
 
   useEffect(() => {
     const container = carouselRef.current;
@@ -120,7 +130,10 @@ const UserProfilePage = () => {
               </span>
             </span>
           </div>
-          <div className="w-12 h-12 rounded-full shadow-brand-color flex-center">
+          <div
+            onClick={handlePaidAction}
+            className="w-12 h-12 rounded-full shadow-brand-color flex-center"
+          >
             <Image src={gift} alt="Gift" className="w-7 h-7" />
           </div>
         </div>
@@ -206,6 +219,7 @@ const UserProfilePage = () => {
           </div>
         </div>
       </div>
+      <OutOfCoins open={showOutOfCoins} onOpenChange={setShowOutOfCoins} />
     </div>
   );
 };
