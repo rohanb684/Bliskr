@@ -3,6 +3,7 @@ import Image from "next/image";
 import welcome1 from "@/public/images/welcome1.jpg";
 import logo from "@/public/images/welcomeLogo.svg";
 import gIcon from "@/public/images/gIcon.svg";
+import Link from "next/link";
 
 const WelcomPage = () => {
   return (
@@ -29,13 +30,21 @@ const WelcomPage = () => {
           priority
         />
 
-        <div className="w-[80%] sm:w-[70%] flex flex-col gap-8 text-lg sm:text-xl">
-          <button
-            className=" bg-[linear-gradient(135deg,#FF7415_0%,#55128A_100%)]
+        <div className="w-[80%] sm:w-[70%] flex flex-col gap-5 text-lg sm:text-xl">
+          <Link
+            href={"/signup/email"}
+            className="bg-[linear-gradient(120deg,#FF7415_0%,#55128A_100%)]
     shadow-[0_4px_8px_0_#E6B0C8] w-full text-center text-white text-shadow-md rounded-sm p-3 sm:p-4 font-bold  cursor-pointer"
           >
             Create Account
-          </button>
+          </Link>
+          <Link
+            href={"/signin"}
+            className="bg-[linear-gradient(135deg,#0F172A_0%,#334155_100%)]
+    shadow-[0_4px_8px_0_#E6B0C8] w-full text-center text-white text-shadow-md rounded-sm p-3 sm:p-4 font-bold  cursor-pointer"
+          >
+            Sign In with email
+          </Link>
           <button
             className=" bg-[linear-gradient(135deg, rgba(255, 116, 21, 0.08) 0%, rgba(85, 18, 138, 0.08) 100%)]
     shadow-[0_4px_8px_0_#E6B0C8] w-full text-center font-bold text-white text-shadow-md rounded-sm p-3 sm:p-4 flex items-center justify-center 

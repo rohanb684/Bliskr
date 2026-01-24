@@ -24,6 +24,11 @@ const SignupFlowLayout = ({ children }: { children: React.ReactNode }) => {
   const safeIndex = currentIndex === -1 ? 0 : currentIndex;
 
   const handlePrev = () => {
+    if (pathname === "/signup/email") {
+      router.push("/welcome");
+      return;
+    }
+
     const currentIndex = FLOW_STEPS.findIndex((step) => step.path === pathname);
 
     const safeIndex = currentIndex === -1 ? 0 : currentIndex;
