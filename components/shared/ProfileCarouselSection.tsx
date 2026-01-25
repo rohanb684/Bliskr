@@ -1,7 +1,9 @@
+"use client";
+
 import MatchProfileCard from "@/components/shared/MatchProfileCard";
 import { StaticImageData } from "next/image";
 
-interface ProfileData {
+export interface ProfileData {
   id: string;
   name: string;
   age: number;
@@ -12,11 +14,13 @@ interface ProfileData {
 interface ProfileCarouselSectionProps {
   title: string;
   profiles: ProfileData[];
+  onProfileClick?: (profile: ProfileData) => void;
 }
 
 const ProfileCarouselSection = ({
   title,
   profiles,
+  onProfileClick,
 }: ProfileCarouselSectionProps) => {
   return (
     <div className="flex flex-col gap-3">
@@ -31,6 +35,7 @@ const ProfileCarouselSection = ({
               age={profile.age}
               location={profile.location}
               image={profile.image}
+              onClick={() => onProfileClick?.(profile)}
             />
           </div>
         ))}

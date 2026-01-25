@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import match1 from "@/public/images/matches/match1.jpg";
 import oLocation from "@/public/images/orangeLocation.svg";
 import { Heart } from "lucide-react";
-import Link from "next/link";
 
 interface MatchProfileCardProps {
   id?: string;
@@ -14,6 +13,7 @@ interface MatchProfileCardProps {
   age?: number;
   location?: string;
   image?: StaticImageData;
+  onClick?: () => void;
 }
 
 const MatchProfileCard = ({
@@ -22,6 +22,7 @@ const MatchProfileCard = ({
   age = 27,
   location = "Kolkata",
   image = match1,
+  onClick,
 }: MatchProfileCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
 
@@ -32,9 +33,9 @@ const MatchProfileCard = ({
   };
 
   return (
-    <Link
-      href={`/users/${id}`}
-      className="flex flex-col gap-2 w-55 shrink-0 group"
+    <div
+      onClick={onClick}
+      className="flex flex-col gap-2 w-55 shrink-0 group cursor-pointer"
     >
       <div className="w-full overflow-hidden shadow-light-brand-color rounded-lg">
         <Image
@@ -84,7 +85,7 @@ const MatchProfileCard = ({
           </motion.div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

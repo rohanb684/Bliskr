@@ -1,6 +1,11 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import Image from "next/image";
 import Ouc from "@/public/images/ouc.png";
 import Link from "next/link";
@@ -17,12 +22,11 @@ const OutOfCoins = ({ open, onOpenChange }: OutOfCoinsProps) => {
         <DialogTitle className="sr-only">Out of Coins</DialogTitle>
         <div className=" flex flex-col items-center gap-4">
           <Image src={Ouc} alt="Out of Coins" className="w-[70%]" />
-
-          <p className="font-semibold text-lg lg:text-2xl text-center text-brand-color">
+          <DialogDescription className="font-semibold text-lg sm:text-2xl text-center text-brand-color">
             You are out of coins
             <br />
             Buy coins to continue
-          </p>
+          </DialogDescription>
 
           <Link
             href="/coins"

@@ -3,9 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 @theme {
-  --color-brand-color: #55128A;
+  --color-brand-color: #55128a;
 }
 @theme inline {
   --color-background: var(--background);
@@ -121,39 +120,42 @@
 }
 
 @utility bg-app-gradient {
-  background:linear-gradient(90deg, #D5E5FE 0%, #FEEFEB 100%);
+  background: linear-gradient(90deg, #d5e5fe 0%, #feefeb 100%);
 }
 @utility bg-white-card {
-  background:rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.4);
 }
-@utility bg-proceed-btn{
-  background:linear-gradient(135deg, #FF7415 0%, #55128A 100%)
+@utility bg-proceed-btn {
+  background: linear-gradient(135deg, #ff7415 0%, #55128a 100%);
 }
-@utility bg-pink-gradient{
-  background:linear-gradient(92deg, #FFF 0%, #FFCEE4 98.27%)
+@utility bg-pink-gradient {
+  background: linear-gradient(92deg, #fff 0%, #ffcee4 98.27%);
 }
 @utility shadow-light-brand-color {
-  box-shadow: 0 4px 8px 0 transparent, 0 0 3px 0 #55128A inset;
+  box-shadow:
+    0 4px 8px 0 transparent,
+    0 0 3px 0 #55128a inset;
 }
 @utility shadow-brand-color {
-  box-shadow: 0 4px 8px 0 #55128A, 0 0 3px 0 #55128A inset;
+  box-shadow:
+    0 4px 8px 0 #55128a,
+    0 0 3px 0 #55128a inset;
 }
-@utility shadow-pink-color{
-  box-shadow: 0 4px 8px 0 #E6B0C8;
+@utility shadow-pink-color {
+  box-shadow: 0 4px 8px 0 #e6b0c8;
 }
-
 
 @layer utilities {
-  .form-header{
-    @apply text-2xl font-black 
+  .form-header {
+    @apply text-2xl font-black;
   }
-  .form-input{
-    @apply  w-full bg-[rgba(255,255,255,0.40)] shadow-[inset_0_0_3px_0_#55128A] border border-transparent
+  .form-input {
+    @apply w-full bg-[rgba(255,255,255,0.40)] shadow-[inset_0_0_3px_0_#55128A] border border-transparent
         focus:border-brand-color focus:ring-0 focus:ring-offset-0 focus:outline-none focus-visible:ring-0
-        focus-visible:ring-offset-0 focus-visible:outline-none transition-colors duration-200
+        focus-visible:ring-offset-0 focus-visible:outline-none transition-colors duration-200;
   }
-  .flex-center{
-    @apply flex items-center justify-center
+  .flex-center {
+    @apply flex items-center justify-center;
   }
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -173,3 +175,15 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}

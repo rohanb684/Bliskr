@@ -19,6 +19,7 @@ const TopNav = () => {
             src={bell}
             alt="Notifications"
             className="w-8 cursor-pointer"
+            loading="eager"
           />
         </Link>
       </div>
